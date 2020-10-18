@@ -29,17 +29,25 @@ Bonus
 The distance traveled by the snail each day is now defined by a list.
 advance_cm = [30, 21, 33, 77, 44, 45, 23, 45, 12, 34, 55]
 On the first day, the snail rises 30cm but during the night it slides 20cm. On the second day, the snail rises 21cm but during the night it slides 20cm, and so on.
+
 1. How many days does it take for the snail to escape the well?
 Follow the same guidelines as in the previous challenge.
 Hint: Remember that the snail gets out of the well when it surpasses the 125cm of height.
-In [ ]:
+
+print(max(advance_cm))
 
 2. What is its maximum displacement in one day? And its minimum? Calculate the displacement using only the travel distance of the days used to get out of the well.
 Hint: Remember that displacement means the total distance risen taking into account that the snail slides at night.
-In [ ]:
+
+print(min(advance_cm))
 
 3. What is its average progress? Take into account the snail slides at night.
-In [ ]:
+
+num = sum(advance_cm)
+den = len(advance_cm)
+avg =  num / den
+print(avg)
 
 4. What is the standard deviation of its displacement? Take into account the snail slides at night.
-In [ ]:
+
+print(np.std(advance_cm))
