@@ -51,3 +51,4 @@ print(avg)
 4. What is the standard deviation of its displacement? Take into account the snail slides at night.
 
 print(np.std(advance_cm))
+print("")
