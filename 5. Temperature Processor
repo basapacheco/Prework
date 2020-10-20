@@ -1,4 +1,4 @@
-Temperature Sensor
+print("Temperature Sensor")
 There is a temperature sensor in the processor of your company's server. The company wants to analyze the data provided by the sensor to decide if they should change the cooling system for a better one. As changing the cooling system is expensive and you are an excellent data analyst, you can't make a decision without basis.
 
 Tools
