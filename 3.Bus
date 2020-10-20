@@ -43,3 +43,4 @@ print ("standar deviation")
 import statistics 
 std_dev = statistics.stdev(list)
 print(std_dev)
+print(" ")
