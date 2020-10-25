@@ -107,5 +107,7 @@ average_saruman = ( sum_saruman / len_saruman )
 print(average_saruman)
 print(" ")
 print("6. Find the standard deviation of the spell power of Gandalf and Saruman")
-print("pendiente de contestar")
-
+print("standard deviation of the spell power of Gandalf")
+lst = gandalf_power
+std = statistics.stdev(lst)
+print(std)
