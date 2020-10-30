@@ -35,8 +35,8 @@ points = [(4, 5), (-0, 2), (4, 7), (1, -3), (3, -2), (4, 5), (3, 2), (5, 7), (-5
 
 i = 0
 j = 0
-cuenta = 0
-coincidentes = []
+count = 0
+coincidents = []
 print(len(points))
 
 while i < len(points):
@@ -46,11 +46,11 @@ while i < len(points):
             pass
         elif points[i][0] == points[j][0] and points[i][1] == points[j][1]:
             tuple = (points[i][0], points[i][1])
-            coincidentes.append(tuple)
+            coincidents.append(tuple)
         j += 1
     i += 1
 
-noReps = set(coincidentes)
+noReps = set(coincidents)
 print(noReps)
 
 print("")
@@ -64,7 +64,7 @@ Q4 = 0
 i = 0
 while i < len(points):
     if points[i][0] == 0 and points[i][1] == 0:
-        print("no pertenece a ningun cuadrante")
+        print("does not belong to any quadrant")
     if points[i][0] < 0 and points[i][1] < 0 or points[i][0] == 0 and points[i][1] < 0 or points[i][1] == 0 and points[i][0] < 0:
         Q3 += 1
     if points[i][0] > 0 and points[i][1] > 0 or points[i][0] == 0 and points[i][1] > 0 or points[i][1] == 0 and points[i][0] > 0:
@@ -75,10 +75,10 @@ while i < len(points):
         Q2 += 1
     i += 1
 
-print("cuadrante 1: ", Q1)
-print("cuadrante 2: ", Q2)
-print("cuadrante 3: ", Q3)
-print("cuadrante 4: ", Q4)
+print("quadrant 1: ", Q1)
+print("quadrant 2: ", Q2)
+print("quadrant 3: ", Q3)
+print("quadrant 4: ", Q4)
 
 print("")
 print("3. Find the point closest to the center. Calculate its distance to the center.")
@@ -86,25 +86,25 @@ print("Take into account that there might be more than one point at the minimum 
 
 import math
 
-def distanciaAlCentro(punto):
-    X = punto[0] * punto[0]
-    Y = punto[1] * punto[1]
-    suma = X + Y
-    raiz = math.sqrt(suma)
-    return raiz
+def distanceToCenter(point):
+    X = point[0] * point[0]
+    Y = point[1] * point[1]
+    sum = X + Y
+    root = math.sqrt(sum)
+    return root
 
 i = 0
-distancia = 0
-distancias = []
+distance = 0
+distances = []
 while i < len(points):
-    distancia = distanciaAlCentro(points[i])
-    distancias.append(distancia)
+    distance = distanceToCenter(points[i])
+    distances.append(distance)
     i += 1
 
-indice_con_menor_distancia_centro = distancias.index(min(distancias))
-print(indice_con_menor_distancia_centro)
-punto_con_menor_distancia = points[indice_con_menor_distancia_centro]
-print(punto_con_menor_distancia)
+index_with_less_center_distance = distances.index(min(distances))
+print(index_with_less_center_distance)
+point_with_less_distance = points[index_with_less_center_distance]
+print(point_with_less_distance)
 
 print("Hint: Use the Euclidean distance. You can find more information about it here.")
 print("Hint: Defining a function that calculates the distance to the center can help.")
@@ -115,11 +115,11 @@ print("4. If the archery target has a radius of 9, calculate the number of arrow
 print("Hint: Use the function created in step 3.")
 
 i = 0
-puntos = 0
+poins = 0
 while i < len(points):
-    distancia = distanciaAlCentro(points[i])
-    if distancia > 9:
-        puntos += 1
+    distancw = distanceToCenter(points[i])
+    if distancw > 9:
+        poins += 1
     i += 1
 
-print(puntos)
+print(poins)
