@@ -106,3 +106,4 @@ while cpu_score <= rounds_to_win and player_score <= rounds_to_win:
 
 print("CPU:" + str(cpu_score))
 print("Player: " + str(player_score))
+
