@@ -1,85 +1,98 @@
 print("Temperature Sensor")
-There is a temperature sensor in the processor of your company's server. The company wants to analyze the data provided by the sensor to decide if they should change the cooling system for a better one. As changing the cooling system is expensive and you are an excellent data analyst, you can't make a decision without basis.
+print("There is a temperature sensor in the processor of your company's server. The company wants to analyze the data provided by the sensor to decide if they should change the cooling system for a better one. As changing the cooling system is expensive and you are an excellent data analyst, you can't make a decision without basis.")
+print("")
+print("Tools")
+print("You don't necessarily need to use all the tools. Maybe you opt to use some of them or completely different ones, they are given to help you shape the exercise. Programming exercises can be solved in many different ways.")
+print("")
+print("Data structures: lists")
+print("Loops: list comprehension")
+print("Functions: min, max, print, len")
+print("Conditional statements: if-elif-else")
+print("Tasks")
+print("The temperatures measured throughout the 24 hours of a day are:")
 
-Tools
-You don't necessarily need to use all the tools. Maybe you opt to use some of them or completely different ones, they are given to help you shape the exercise. Programming exercises can be solved in many different ways.
-
-Data structures: lists
-Loops: list comprehension
-Functions: min, max, print, len
-Conditional statements: if-elif-else
-Tasks
-The temperatures measured throughout the 24 hours of a day are:
-
-In [ ]:
 temperatures_C = [33, 66, 65, 0, 59, 60, 62, 64, 70, 76, 80, 81, 80, 83, 90, 79, 61, 53, 50, 49, 53, 48, 45, 39]
-The first element of the list is the temperature at 12am, the second element is the temperature at 1am, and so on.
 
-The company has decided that if one of the following events occurs, then the cooling system needs to be replaced for a new one to avoid damaging the processor.
+print("The first element of the list is the temperature at 12am, the second element is the temperature at 1am, and so on.")
 
-More than 4 temperatures are greater than or equal to 70ºC.
-Any temperature is above 80ºC.
-The average temperature exceeds 65ºC.
-Follow the steps so that you can make the decision.
+print("The company has decided that if one of the following events occurs, then the cooling system needs to be replaced for a new one to avoid damaging the processor.")
 
-1. Find the minimum temperature of the day and store it in a variable.
-In [ ]:
+print("More than 4 temperatures are greater than or equal to 70ºC.")
+print("Any temperature is above 80ºC.")
+print("The average temperature exceeds 65ºC.")
+print("Follow the steps so that you can make the decision.")
 
-2. Find the maximum temperature of the day and store it in a variable.
-In [ ]:
+print("1. Find the minimum temperature of the day and store it in a variable.")
+mini = min(temperatures_C)
+print(mini)
 
-3. Create a list with the temperatures that are greater than or equal to 70ºC. Store it in a variable.
-In [ ]:
+print("2. Find the maximum temperature of the day and store it in a variable.")
+maximun = max(temperatures_C)
+print(maximun)
 
-4. Find the average temperature of the day and store it in a variable.
-In [ ]:
+print("3. Create a list with the temperatures that are greater than or equal to 70ºC. Store it in a variable.")
+temperatures_greater_than_70 = [temperature for temperature in temperatures_C if temperature >= 70]
+are_4_greater_than_k = len(temperatures_greater_than_70) > 4
+print(are_4_greater_than_k)
 
-5. Imagine that there was a sensor failure at 3am and the data for that specific hour was not recorded. How would you estimate the missing value? Replace the current value of the list at 3am for an estimation.
-In [ ]:
+print("4. Find the average temperature of the day and store it in a variable.")
+averagetemp = sum(temperatures_C) / len(temperatures_C)
+print(averagetemp)
 
-6. Bonus: the maintenance staff is from the United States and does not understand the international metric system. Help them by converting the temperatures from Celsius to Fahrenheit.
-To know more about temperature conversion check this link.
+print("5. Imagine that there was a sensor failure at 3am and the data for that specific hour was not recorded. How would you estimate the missing value? Replace the current value of the list at 3am for an estimation.")
 
-Formula:
+temperatures_C[2] = 0
+print(temperatures_C) 
 
-$F = 1.8 * C + 32$
+print("6. Bonus: the maintenance staff is from the United States and does not understand the international metric system. Help them by converting the temperatures from Celsius to Fahrenheit.")
+print("To know more about temperature conversion check this link.")
+print("Formula: $F = 1.8 * C + 32$")
 
-In [ ]:
+temperatures_C
+conversionResult = [((9/5)*temperatures_C + 32) for temperatures_C in temperatures_C]
+print(conversionResult)
 
-7. Make a decision!
-Now it's time to make a decision taking into account what you have seen until now.
 
-Remember that if one of the following events occurs, then the cooling system needs to be replaced for a new one to avoid damaging the processor.
+print("7. Make a decision!")
+print("Now it's time to make a decision taking into account what you have seen until now.")
+print("")
+print("Remember that if one of the following events occurs, then the cooling system needs to be replaced for a new one to avoid damaging the processor.")
+print("")
+print("More than 4 temperatures are greater than or equal to 70ºC.")
 
-More than 4 temperatures are greater than or equal to 70ºC.
-Any temperature is above 80ºC.
-The average temperature exceeds 65ºC.
-To make your decision, check if any of the three conditions above is met. You might need to use some of the variables you created in steps 1 to 6. Print a message to show if the cooling system needs to be changed or not.
-In [ ]:
+k = 70
 
-Bonus
-The company has decided that the decision you made is not valid. They want you to analyze the data again but this time, the conditions that need to be met in order to change the cooling system are different.
+are_4_greater_than_k = []
+for temperature in temperatures_C:
+  if temperature > k:
+    are_4_greater_than_k.append(temperature)
+are_4_greater_than_k = len(are_4_greater_than_k) > 4
 
-This time, if one of the following events occurs, then the cooling system needs to be replaced:
+print(are_4_greater_than_k)
 
-The temperature is greater than 70ºC during more than 4 consecutive hours.
-Any temperature is above 80ºC.
-The average temperature exceeds 65ºC.
-Follow the steps so that you can make the decision.
+print("")
+print("Any temperature is above 80ºC.")
 
-1. Create a list with the hours where the temperature is greater than 70ºC. Store it in a variable.
-In [ ]:
+d = 80
 
-2. Check if the list you created in step 1 has more than 4 consecutive hours.¶
-In [ ]:
+are_4_greater_than_d = []
+for temperature in temperatures_C:
+  if temperature > d:
+    are_4_greater_than_d.append(temperature)
+are_4_greater_than_d = len(are_4_greater_than_d) >= 0
 
-3. Make the decision!
-To make your decision, check if any of the three conditions is met. Print a message to show if the cooling system needs to be changed or not.
+print(are_4_greater_than_d)
 
-In [ ]:
+print("")
+print("The average temperature exceeds 65ºC.")
+mean_above_65 = averagetemp > 65
+print(mean_above_65)
 
-4. Find the average value of the temperature lists (ºC and ºF). What is the relation between both average values?
-In [ ]:
+print("")
+print("To make your decision, check if any of the three conditions above is met. You might need to use some of the variables you created in steps 1 to 6. Print a message to show if the cooling system needs to be changed or not.")
 
-5. Find the standard deviation of the temperature lists (ºC and ºF). What is the relation between both standard deviations?
-In [ ]:
+if are_4_greater_than_k or are_4_greater_than_d or mean_above_65:
+  print("the cooling system needs to be changed")
+else:
+  print("the cooling system not needs to be changed") 
+print("")
